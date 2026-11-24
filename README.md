@@ -1,4 +1,4 @@
-﻿# SFM Code Workshop · SFM 代码工坊
+# SFM Code Workshop · SFM 代码工坊
 
 > 面向 Minecraft **Super Factory Manager 4.34.0** 的可视化 SFML 生成器。  
 > 不写语法、不改存档：在桌面把“何时、从哪取、送到哪”搭好，复制标准 SFML 进游戏即可。
@@ -56,7 +56,7 @@
 ### 方式二：从源码运行
 
 ```powershell
-git clone https://github.com/<your-name>/SFMCodeWorkshop.git
+git clone https://github.com/Makobrs/SFMCodeWorkshop.git
 cd SFMCodeWorkshop
 
 py -3.12 -m venv .venv
@@ -66,7 +66,7 @@ py -3.12 -m venv .venv
 .venv\Scripts\python -m sfm_workshop
 ```
 
-> 把 `<your-name>` 替换为实际 GitHub 用户名，或直接下载仓库源码 ZIP。
+> 也可以直接下载仓库源码 ZIP。
 
 自检：
 

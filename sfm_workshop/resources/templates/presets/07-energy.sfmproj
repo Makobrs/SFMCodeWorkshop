@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-energy",
+  "name": "能量传输",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-energy-1",
+      "name": "能源仓",
+      "kind": "能量",
+      "note": "FE 来源",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-energy-2",
+      "name": "用电器",
+      "kind": "机器",
+      "note": "FE 接收方",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-energy-1",
+      "name": "能量输送",
+      "trigger_kind": "timer",
+      "interval": 1,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "能源仓",
+            "side": "顶面",
+            "resource_type": "能量",
+            "resource_id": "",
+            "quantity": 0,
+            "retain": 0,
+            "with_filter": "",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "用电器",
+              "side": "顶面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-energy-1",
+  "template_key": "energy",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}

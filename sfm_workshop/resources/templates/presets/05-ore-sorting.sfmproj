@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-ore-sorting",
+  "name": "矿物分拣",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-ore-sorting-1",
+      "name": "混合箱",
+      "kind": "容器",
+      "note": "未分类的混合产物",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-ore-sorting-2",
+      "name": "矿石箱",
+      "kind": "容器",
+      "note": "接收矿石",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-ore-sorting-3",
+      "name": "废石箱",
+      "kind": "容器",
+      "note": "接收非矿石",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-ore-sorting-1",
+      "name": "分拣矿石",
+      "trigger_kind": "timer",
+      "interval": 20,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "混合箱",
+            "side": "默认面",
+            "resource_type": "物品",
+            "resource_id": "",
+            "quantity": 32,
+            "retain": 0,
+            "with_filter": "#c:ores",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "矿石箱",
+              "side": "默认面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-ore-sorting-1",
+  "template_key": "ore-sorting",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}

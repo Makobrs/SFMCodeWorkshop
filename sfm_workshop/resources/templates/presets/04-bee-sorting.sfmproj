@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-bee-sorting",
+  "name": "蜂箱分类",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-bee-sorting-1",
+      "name": "蜂箱输出",
+      "kind": "其他",
+      "note": "蜂箱或离心机产物",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-bee-sorting-2",
+      "name": "蜜脾箱",
+      "kind": "容器",
+      "note": "接收蜜脾",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-bee-sorting-3",
+      "name": "蜂蜜瓶箱",
+      "kind": "容器",
+      "note": "接收蜂蜜瓶",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-bee-sorting-1",
+      "name": "收集蜜脾",
+      "trigger_kind": "timer",
+      "interval": 20,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "蜂箱输出",
+            "side": "默认面",
+            "resource_type": "物品",
+            "resource_id": "",
+            "quantity": 16,
+            "retain": 0,
+            "with_filter": "#c:combs",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "蜜脾箱",
+              "side": "默认面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-bee-sorting-1",
+  "template_key": "bee-sorting",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}

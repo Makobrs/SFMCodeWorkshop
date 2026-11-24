@@ -1,0 +1,51 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build output
+build/
+build_workshop/
+build_workshop_final/
+dist/
+*.spec
+!sfm_workshop.spec
+*.zip
+
+# Runtime/user data
+data/
+logs/
+*.log
+*.tmp
+*.sfm
+.env
+.env.*
+!.env.example
+
+# Local artifacts
+demo_data/
+review-tmp/
+probe-*/
+p0_ui_spike/
+sfm-audit-*/
+sfmprobe*/
+tmp*/
+ws-*/
+pytest-of-*/
+*.bak
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# AI keys / secrets
+*.pem
+*.key
+secrets.json

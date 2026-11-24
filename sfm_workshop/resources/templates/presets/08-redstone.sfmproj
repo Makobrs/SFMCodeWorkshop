@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-redstone",
+  "name": "红石脉冲",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-redstone-1",
+      "name": "入口箱",
+      "kind": "容器",
+      "note": "脉冲触发时取货",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-redstone-2",
+      "name": "出口箱",
+      "kind": "容器",
+      "note": "脉冲触发时送货",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-redstone-1",
+      "name": "脉冲搬运",
+      "trigger_kind": "pulse",
+      "interval": 20,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "入口箱",
+            "side": "默认面",
+            "resource_type": "物品",
+            "resource_id": "",
+            "quantity": 1,
+            "retain": 0,
+            "with_filter": "",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "出口箱",
+              "side": "默认面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-redstone-1",
+  "template_key": "redstone",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}

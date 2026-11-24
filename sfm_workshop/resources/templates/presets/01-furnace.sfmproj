@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-furnace",
+  "name": "熔炉自动线",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-furnace-1",
+      "name": "原料箱",
+      "kind": "容器",
+      "note": "待烧炼的矿石或原料",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-furnace-2",
+      "name": "煤炭箱",
+      "kind": "容器",
+      "note": "燃料备用",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-furnace-3",
+      "name": "熔炉",
+      "kind": "机器",
+      "note": "顶部投料、底部加燃料",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-furnace-4",
+      "name": "成品箱",
+      "kind": "容器",
+      "note": "收集产物",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-furnace-1",
+      "name": "矿石投料",
+      "trigger_kind": "timer",
+      "interval": 20,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "原料箱",
+            "side": "默认面",
+            "resource_type": "物品",
+            "resource_id": "",
+            "quantity": 8,
+            "retain": 2,
+            "with_filter": "",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "熔炉",
+              "side": "顶面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-furnace-1",
+  "template_key": "furnace",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "proj-template-tree-farm",
+  "name": "树场收集",
+  "profile_id": "1.21.1-neoforge",
+  "labels": [
+    {
+      "id": "lbl-tree-farm-1",
+      "name": "树场输出",
+      "kind": "其他",
+      "note": "树场产物的集中点",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-tree-farm-2",
+      "name": "原木箱",
+      "kind": "容器",
+      "note": "接收原木",
+      "capacity": 0
+    },
+    {
+      "id": "lbl-tree-farm-3",
+      "name": "骨粉箱",
+      "kind": "容器",
+      "note": "可选：树场催熟材料",
+      "capacity": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-tree-farm-1",
+      "name": "收集原木",
+      "trigger_kind": "timer",
+      "interval": 20,
+      "unit": "TICKS",
+      "batches": [
+        {
+          "take": {
+            "source": "树场输出",
+            "side": "默认面",
+            "resource_type": "物品",
+            "resource_id": "",
+            "quantity": 64,
+            "retain": 0,
+            "with_filter": "",
+            "without_filter": ""
+          },
+          "sends": [
+            {
+              "target": "原木箱",
+              "side": "默认面",
+              "retain": 0
+            }
+          ],
+          "clear": true,
+          "condition": ""
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "active_task_id": "task-tree-farm-1",
+  "template_key": "tree-farm",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "ui": {}
+}
